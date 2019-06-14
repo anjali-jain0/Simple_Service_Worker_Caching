@@ -25,7 +25,7 @@ self.addEventListener('activate' , (e) => {
 	console.log('Service Worker activated');
 
 	e.waitUntil(
-		cache.keys().then(cacheNames => {
+		caches.keys().then(cacheNames => {
 			return Promise.all(
 				cacheNames.map(cache => {
 					if(cache !== cacheName){
